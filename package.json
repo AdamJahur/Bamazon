@@ -1,0 +1,24 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Command line based marketplace",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "mysql": "^2.12.0",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamJahur/Bamazon.git"
+  },
+  "author": "Adam Jahur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdamJahur/Bamazon/issues"
+  },
+  "homepage": "https://github.com/AdamJahur/Bamazon#readme"
+}
