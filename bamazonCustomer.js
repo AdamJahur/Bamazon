@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
 //executing code
 var execute = function(){
 
-	connection.query("SELECT * FROM Bamazon.Products", function(err, results) {
+	connection.query('SELECT * FROM Bamazon.Products', function(err, results) {
 		return (prettyTable(results));
 	});
 

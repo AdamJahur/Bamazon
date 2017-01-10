@@ -4,6 +4,7 @@
   "description": "Command line based marketplace",
   "main": "bamazonCustomer.js",
   "dependencies": {
+    "inquirer": "^2.0.0",
     "mysql": "^2.12.0",
     "prompt": "^1.0.0"
   },
