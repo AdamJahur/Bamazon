@@ -1,6 +1,7 @@
 //requiring npm packages
 var mysql = require('mysql');
 var prompt = require('prompt');
+var consoleTable = require('console.table');
 
 //settings to connect to Bamazon database
 var connection = mysql.createConnection({
@@ -56,17 +57,15 @@ var databaseUpdate = function(id, quantity){
 	});
 }
 
+
 //making inventory look good
 function prettyTable(items){
-	for (var i = 0; i < items.length; i++) {
-		console.log('----------------------');
-		console.log('Item_Id: ' + items[i].Item_Id);
-		console.log('Item: ' + items[i].Product_Name);
-		console.log('Department: ' + items[i].Department_Name);
-		console.log('Price: $' + items[i].Price);
-	}
-	console.log('------------------');
+	console.table(items);
 }
+
+
+
+
 
 //connecting to Bamazon database
 connection.connect(function(err){
