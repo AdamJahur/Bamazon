@@ -2,7 +2,6 @@
 var mysql = require('mysql');
 var prompt = require('prompt');
 var consoleTable = require('console.table');
-var nodeValidator = require('node-validator');
 
 
 //settings to connect to Bamazon database
@@ -29,9 +28,9 @@ var execute = function(){
 			inventoryCheck(shopperItem, shopperQuantity);
 			setTimeout(function() {execute();}, 3500);
 
-			var check = shopperItem.isInteger({min: 0, max: 10});
 
 		});
+
 	}, 750);
 }
 
