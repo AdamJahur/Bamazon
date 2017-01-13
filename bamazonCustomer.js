@@ -2,6 +2,8 @@
 var mysql = require('mysql');
 var prompt = require('prompt');
 var consoleTable = require('console.table');
+var nodeValidator = require('node-validator');
+
 
 //settings to connect to Bamazon database
 var connection = mysql.createConnection({
@@ -10,6 +12,7 @@ var connection = mysql.createConnection({
 	password: '',
 	database: 'Bamazon'
 });
+
 
 //executing code
 var execute = function(){
@@ -26,9 +29,12 @@ var execute = function(){
 			inventoryCheck(shopperItem, shopperQuantity);
 			setTimeout(function() {execute();}, 3500);
 
+			var check = shopperItem.isInteger({min: 0, max: 10});
+
 		});
 	}, 750);
 }
+
 
 //checking inventory 
 var inventoryCheck = function (id, quantity){
@@ -50,6 +56,7 @@ var inventoryCheck = function (id, quantity){
 	});
 }
 
+
 //updating database after purcahse
 var databaseUpdate = function(id, quantity){
 	connection.query('update products set Stock_Quantity = ' + quantity + ' where Item_Id = ' + id, function(err, result){
@@ -62,9 +69,6 @@ var databaseUpdate = function(id, quantity){
 function prettyTable(items){
 	console.table(items);
 }
-
-
-
 
 
 //connecting to Bamazon database
